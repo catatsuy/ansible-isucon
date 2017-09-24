@@ -12,7 +12,7 @@
     # https://twitter.com/matsuu/status/773105183744069633
     - replace: dest=/home/isucon/.xbuild/perl-install regexp='http://cpanmin\.us/' replace='http://git.io/cpanm'
     # golang
-    - command: /home/isucon/.xbuild/go-install 1.5 /home/isucon/.local/go
+    - command: /home/isucon/.xbuild/go-install 1.9 /home/isucon/.local/go
       args:
         creates: /home/isucon/.local/go/bin/go
 

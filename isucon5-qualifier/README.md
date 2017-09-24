@@ -10,6 +10,10 @@ Ansible playbook for [ISUCON5-qualifier](http://isucon.net/archives/45166636.htm
 
 ## Usage
 
+```
+ansible-playbook -i remote --connection=local playbook.yml
+```
+
 Remote:
 ```
 git clone https://github.com/matsuu/ansible-isucon.git
