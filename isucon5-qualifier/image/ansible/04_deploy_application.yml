@@ -12,29 +12,6 @@
     - command: rm -rf /tmp/isucon5-qualify
       args:
         removes: /tmp/isucon5-qualify
-    - name: ruby
-      shell: PATH=/home/isucon/.local/ruby/bin:$PATH bundle install
-      args:
-        chdir: /home/isucon/webapp/ruby
-    - name: perl
-      shell: |
-        rm -f cpanfile.snapshot
-        PATH=/home/isucon/.local/perl/bin:$PATH carton install
-      args:
-        chdir: /home/isucon/webapp/perl
-    - name: php
-      shell: PATH=/home/isucon/.local/php/bin:$PATH php composer.phar install
-      args:
-        chdir: /home/isucon/webapp/php
-    - name: java
-      shell: ./mvnw package
-      args:
-        chdir: /home/isucon/webapp/java
-
-    # python
-    - command: /home/isucon/.local/python3/bin/pip install bottle
-    - command: /home/isucon/.local/python3/bin/pip install pymysql
-    - command: /home/isucon/.local/python3/bin/pip install gunicorn
 
     - name: go get mysql
       shell: PATH=/home/isucon/.local/go/bin:$PATH GOROOT=/home/isucon/.local/go GOPATH=/home/isucon/webapp/go go get github.com/go-sql-driver/mysql
@@ -59,10 +36,6 @@
 
     # TODO: - npm install
     # TODO: - composer?
-    - name: scala
-      shell: ./sbt launcher
-      args:
-        chdir: /home/isucon/webapp/scala
 
   # post_tasks:
     # - command: sudo su - isucon /home/isucon/init.sh
@@ -89,4 +62,4 @@
     # TODO: - nodejs (systemd)
 
     - name: default application selection
-      service: name=isuxi.ruby state=running enabled=true
+      service: name=isuxi.go state=running enabled=true
