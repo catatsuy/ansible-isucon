@@ -11,6 +11,7 @@ Ansible playbook for [ISUCON5-qualifier](http://isucon.net/archives/45166636.htm
 ## Usage
 
 ```
+sudo apt install ansible
 ansible-playbook -i remote --connection=local playbook.yml
 ```
 
